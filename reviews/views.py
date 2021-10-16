@@ -52,7 +52,8 @@ class SubjectViewSet(FlexFieldsMixin, ReadOnlyModelViewSet):
     def get_queryset(self):
 
         queryset = Subject.objects.all()
-
+        # if is_expanded(self.request, 'course'):    
+        #     queryset = queryset.prefetch_related('subjects__course')
         return queryset
 
 

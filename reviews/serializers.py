@@ -31,6 +31,7 @@ class CourseSerializer(FlexFieldsModelSerializer):
 
 
 class SubjectSerializer(FlexFieldsModelSerializer):
+    course = CourseSerializer()
     class Meta:
         model = Subject
         fields = ['pk', 'name', 'course']
@@ -67,6 +68,7 @@ class UserSerializer(FlexFieldsModelSerializer):
 
 
 class CommentSerializer(FlexFieldsModelSerializer):
+
     class Meta:
         model = Comment
         fields = ['pk', 'title', 'content', 'created', 'updated']
