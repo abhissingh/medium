@@ -1,5 +1,5 @@
 from rest_flex_fields import FlexFieldsModelSerializer
-from .models import Product, Category, Company, ProductSize, ProductSite, Comment, Image
+from .models import Product, Category, Company, ProductSize, Course, ProductSite, Comment, Image,Subject
 from django.contrib.auth.models import User
 from versatileimagefield.serializers import VersatileImageFieldSerializer
 
@@ -23,6 +23,18 @@ class ProductSizeSerializer(FlexFieldsModelSerializer):
     class Meta:
         model = ProductSize
         fields = ['pk', 'name']
+
+class CourseSerializer(FlexFieldsModelSerializer):
+    class Meta:
+        model = Course
+        fields = ['pk', 'name']
+
+
+class SubjectSerializer(FlexFieldsModelSerializer):
+    class Meta:
+        model = Subject
+        fields = ['pk', 'name', 'course']
+
 
 
 class ProductSerializer(FlexFieldsModelSerializer):

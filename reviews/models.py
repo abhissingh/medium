@@ -10,6 +10,36 @@ class Company(models.Model):
     def __str__(self):
         return self.name
 
+class Company2(models.Model):
+    name = models.CharField(max_length=255)
+    url = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+
+class Course(models.Model):
+    name = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return self.name
+
+class Subject(models.Model):
+    name = models.CharField(max_length=255)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='subjects', related_query_name='subject')
+
+    def __str__(self):
+        return self.name
+
+class Question(models.Model):
+    name = models.CharField(max_length=255)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='questions', related_query_name='question')
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='questions', related_query_name='question')
+
+    def __str__(self):
+        return self.name
+
+
 
 class ProductSize(models.Model):
     name = models.CharField(max_length=255)
