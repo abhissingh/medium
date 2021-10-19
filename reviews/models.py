@@ -31,6 +31,25 @@ class Subject(models.Model):
     def __str__(self):
         return self.name
 
+class Set(models.Model):
+    name = models.CharField(max_length=255)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='Sets', related_query_name='set')
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='Sets', related_query_name='set')
+    
+    def __str__(self):
+        return self.name
+
+
+
+class Series(models.Model):
+    name = models.CharField(max_length=255)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='series', related_query_name='series')
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='series', related_query_name='series')
+    
+    def __str__(self):
+        return self.name
+
+
 class Question(models.Model):
     name = models.CharField(max_length=255)
     course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='questions', related_query_name='question')

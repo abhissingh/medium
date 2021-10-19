@@ -1,12 +1,48 @@
+###
+#login
+http://127.0.0.1:8000/auth/login/
 
+{
+
+}
 
 
 ###
+#register
+http://127.0.0.1:8000/auth/register/
+
+###
+#change_password
+http://127.0.0.1:8000/auth/change_password/3/
+
+###
+#update_profile
+http://127.0.0.1:8000/auth/update_profile/3/
+
+###
+#logout
+http://127.0.0.1:8000/auth/logout/
+
+###
+#logoutall
+http://127.0.0.1:8000/auth/logout_all/
+
+
+###
+#product
 GET http://127.0.0.1:8000/product/ HTTP/1.1 
 
 
 ###
+#course
 GET http://127.0.0.1:8000/course/ HTTP/1.1 
 
 ###
+#subject
 GET http://127.0.0.1:8000/subject/ HTTP/1.1 
+
+
+###
+#Series
+
+GET  http://127.0.0.1:8000/series/ HTTP/1.1

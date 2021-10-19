@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category, Company,Company2,Course,Subject,Question, ProductSize, ProductSite, Comment, Image
+from .models import Product, Category, Company,Company2,Course,Subject,Set,Question, ProductSize, ProductSite, Comment, Image , Series
 from django.contrib.auth.models import Group
 
 
@@ -21,6 +21,7 @@ admin.site.register(ProductSize)
 admin.site.register(ProductSite)
 admin.site.register(Comment)
 admin.site.register(Image)
+admin.site.register(Series)
 
 admin.site.unregister(Group)
 
